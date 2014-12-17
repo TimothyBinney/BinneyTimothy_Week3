@@ -25,7 +25,7 @@ exports.saveData = function(jsonInfo) {
 	var data = Ti.Database.open('week3avf');
 	data.execute('CREATE TABLE IF NOT EXISTS avfweek3 (id INTEGER PRIMARY KEY, url TEXT, thumbnail TEXT, title TEXT, owner TEXT)');
 	for(var i=0; i<j; i++){
-	data.execute('INSERT INTO avfweek3 (url,thumbnail,title,owner) VALUES (?,?,?,?)', jsonInfo[i].url, jsonInfo[i].thumbnail, jsonInfo[i].title, jsonInfo[i].owner);
+	data.execute('INSERT INTO avfweek3 (url,thumbnail,title,owner) VALUES (?,?,?,?)', jsonInfo[i].url, jsonInfo[i].thumbnail_60_url, jsonInfo[i].title, jsonInfo[i].owner.screnname);
 	};
 	data.close();
 
