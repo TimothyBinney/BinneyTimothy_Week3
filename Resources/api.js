@@ -6,7 +6,7 @@ var getInfo = function(){
 	xhr.onload = function(){
 		var jsonInfo = JSON.parse(this.responseText);
 		console.log(JSON.stringify(jsonInfo.list));
-		save.saveData(jsonInfo);
+		save.saveData(jsonInfo.list);
 	};
 	xhr.onerror = function(){
 		alert("Network Required!");

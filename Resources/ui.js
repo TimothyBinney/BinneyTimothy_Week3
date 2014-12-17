@@ -18,6 +18,8 @@ exports.createUI = function(tblData){
 		image: tblData[0].url,
 	});
 	
+	
+	
 	var label = Ti.UI.createLabel({
 		bottom: 1,
 		height: 5,
