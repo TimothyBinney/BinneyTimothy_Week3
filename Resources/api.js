@@ -1,7 +1,7 @@
 var save = require("save");
 
 var getInfo = function(){
-	var url = "https://api.dailymotion.com/channel/auto/videos?fields=url,thumbnail_60_url,title,owner.screenname";
+	var url = "https://api.dailymotion.com/user/cbmracing/videos?fields=url,thumbnail_60_url,title,owner";
 	var xhr = Ti.Network.createHTTPClient();
 	xhr.onload = function(){
 		var jsonInfo = JSON.parse(this.responseText);
