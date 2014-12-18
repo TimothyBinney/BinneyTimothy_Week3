@@ -31,7 +31,7 @@ exports.saveData = function(jsonInfo) {
 
 	Cloud.Objects.create({
 		classname : "Videos",
-		custom_fields : {
+			fields : {
 			url : jsonInfo.url,
 			thumbnail : jsonInfo.thumbnail,
 			title : jsonInfo.title,

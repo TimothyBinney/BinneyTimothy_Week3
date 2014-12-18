@@ -1,21 +1,20 @@
 exports.createUI = function(tblData){
-	console.log(tblData);
+	//console.log(tblData);
 	
 	var getVideo = function(){
 		
 	};
 	
 	var win = Ti.UI.createWindow({
-		backgroundColor: "grey",
+		backgroundColor: "white",
 	});
 	
 	var table  = Ti.UI.createTableView({
 	});
 	
-	for(var i = 0; j=tblData.length; i<j, i++){
+	for(var i = 0, j=tblData.length; i<j; i++){
 		var row = Ti.UI.createTableViewRow({
 			height: 50,
-			text: tblData[i].title
 		});
 		
 		var image = Ti.UI.createImageView({
@@ -25,8 +24,19 @@ exports.createUI = function(tblData){
 			width: 45,
 		});
 		
+		var label = Ti.UI.createLabel({
+			text: tblData[i].title,
+		});
+		
+		row.add(label);
 		row.add(image);
+		table.add(row);
+		
 	};
 	row.addEventListener("click", getVideo);
+	
+	win.add(table);
+	win.open();
+	
 	
 };
