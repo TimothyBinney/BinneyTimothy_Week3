@@ -2,26 +2,43 @@ exports.createUI = function(tblData){
 	console.log(tblData);
 	
 	var getVideo = function(){
-		console.log(this);
 		var vidWin = Titanium.UI.createWindow({
     	title : this.title,
    		backgroundColor : '#fff'
 		});
 
 	var videoPlayer = Titanium.Media.createVideoPlayer({
-    	top : 15,
+    	top : 40,
     	autoplay : true,
     	backgroundColor : 'blue',
     	height : 300,
     	width : 300,
-    	url: this.embed_html,
+    	url: this.video,
     	mediaControlStyle : Titanium.Media.VIDEO_CONTROL_DEFAULT,
     	scalingMode : Titanium.Media.VIDEO_SCALING_ASPECT_FIT
 		});
 		
+	var button = Ti.UI.createButton({
+		backgroundColor: "green",
+		top: 400,
+		height: 50,
+		width: 200,
+		align: "center",
+	});
+	
+	var buttonLabel = Ti.UI.createLabel({
+		text: "Back",
+		align: "center",
+		color: "white",
+	});
+		
+		//button.addEventListener("click", createUI);
+		button.add(buttonLabel);
+		vidWin.add(button);
 		vidWin.add(videoPlayer);
 		vidWin.open();
 		};
+		
 	
 	var win = Ti.UI.createWindow({
 		backgroundColor: "white",
@@ -35,6 +52,7 @@ exports.createUI = function(tblData){
 			height: 50,
 			data: tblData[i],
 			hasChild: true,
+			video: tblData[i].url,
 		});
 		
 		var image = Ti.UI.createImageView({
