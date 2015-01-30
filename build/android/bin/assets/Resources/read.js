@@ -1,0 +1,1 @@
+/Users/tjbinney/Desktop/BinneyTimothy_Week3/Resources/read.js
